@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Playback",
+    "description": "Adjust playback speed for HTML5 video elements",
+    "version": "1.0.0",
+    "permissions": [
+        "activeTab"
+    ],
+    "commands": {
+        "increase-speed": {
+            "suggested_key": {
+                "default": "Ctrl+Period"
+            },
+            "description": "Increase playback speed"
+        },
+        "decrease-speed": {
+            "suggested_key": {
+                "default": "Ctrl+Comma"
+            },
+            "description": "Decrease playback speed"
+        }
+    },
+    "background": {
+        "scripts": [
+          "command.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["controls.js"]
+        }
+    ]
+}
